@@ -17,14 +17,13 @@ def loop_ranger(start, stop=None, step=1):
     Look up for how range() works in the python docs. You could  answer this
     with just the range function, but we'd like you to do it the long way.
     """
-start = 3
-stop = 10
-step = 1
-my_range = []
-for i in range(start, stop, step):
-    my_range.append(i)
-print(my_range)
-return my_range
+
+    my_range = []
+    while start < stop:
+        my_range.append(start)
+        start += step
+    print(my_range)
+    return my_range
 
 
 def two_step_ranger(start, stop):
@@ -35,9 +34,7 @@ def two_step_ranger(start, stop):
 
     You can either reuse loop_ranger, or the range function that in the standard library
     """
-    two_step_range = []
-    for i in range(start, stop):
-        two_step_range,append(i)
+    two_step_range = loop_ranger(start, stop, 2)
     return two_step_range
 
 
