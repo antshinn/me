@@ -17,8 +17,10 @@ import platform
 # I think this will print "hello! Let's get started" by calling the print function.
 print("hello! Let's get started")  # it printed "hello! Let's get started"
 
+# I think some_words creates list with which prints the words within the [] 
 some_words = ["what", "does", "this", "line", "do", "?"]
 
+# I think it will print word
 for word in some_words:
     print(word)
 
@@ -27,6 +29,7 @@ for x in some_words:
 
 print(some_words)
 
+# If some_words is greater than 3 characters than i will print "some_words contains more than 3 words"
 if len(some_words) > 3:
     print("some_words contains more than 3 words")
 
