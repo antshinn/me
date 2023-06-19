@@ -195,7 +195,7 @@ def loops_5():
     for i in range (10):
         coordinate_row = []
         for j in range (5):
-            coordinate_block.append("(" + str(i) +", j" + str(j) + ")")
+            coordinate_block.append("(" + str(i) +", j" + str(j) + "i" + ")")
         coordinate_block.append(coordinate_row)
     return coordinate_block
 
