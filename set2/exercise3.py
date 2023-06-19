@@ -252,7 +252,17 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    star_columns = []
+    for x in range(5):
+        star_rows = []
+        for y in range(9):
+            if abs(y-4) <= x:
+                star_rows.append('x')
+            else:
+                star_rows.append(' ')
+        star_columns.append(star_rows)
+    print(star_columns)
+    return star_columns
 
 
 def little_printer(some_kind_of_list, exercise_name):
