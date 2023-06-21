@@ -22,7 +22,6 @@ def loop_ranger(start, stop=None, step=1):
     while start < stop:
         my_range.append(start)
         start += step
-    print(my_range)
     return my_range
 
 
@@ -34,8 +33,8 @@ def two_step_ranger(start, stop):
 
     You can either reuse loop_ranger, or the range function that in the standard library
     """
-    two_step_range = loop_ranger(start, stop, 2)
-    return two_step_range
+
+    return loop_ranger(start, stop, 2)
 
 
 def stubborn_asker(low, high):
@@ -46,7 +45,14 @@ def stubborn_asker(low, high):
 
     Look up the docs for a function called "input"
     """
-    return None
+    message = "Enter a number between {low} and {high} ".format(low=low, high=high) 
+    while True:
+        number = int(input(message))
+        if low < number < high:
+            print("Correct {}".format(number))
+            return number
+        else:
+            print("Try again".format(input=number, low=low, high=high))
 
 
 def not_number_rejector(message):
@@ -56,7 +62,14 @@ def not_number_rejector(message):
     (e.g. "cow", "six", "8!") then throw it out and ask for an actual number.
     When you do get a number, return it.
     """
-    return None
+    message = "Enter a number "
+    while True:
+        try:
+            number = int(input(message))
+            print("Correct {}".format(number))
+            return number
+        except Exception as e:
+            print("Try again".format(e))
 
 
 def super_asker(low, high):
