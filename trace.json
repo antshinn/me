@@ -1,7 +1,7 @@
 [
   {
     "of_total": 11,
-    "mark": 9,
+    "mark": 10,
     "results": [
       {
         "value": 1,
@@ -44,7 +44,7 @@
         "name": "You've pushed your work to GitHub: checkID.json"
       },
       {
-        "value": 0,
+        "value": 1,
         "name": "You've got a photo for your GitHub account"
       }
     ],

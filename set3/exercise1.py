@@ -78,7 +78,14 @@ def super_asker(low, high):
     Combine what you learnt from stubborn_asker and not_number_rejector
     to make a function that does it all!
     """
-    return None
+    message = "Enter a number between {low} and {high} ".format(low=low, high=high) 
+    while True:
+        number = int(input(message))
+        if low < number < high:
+            print("Correct {}".format(number))
+            return number
+        else:
+            print("Try again".format(input=number, low=low, high=high))
 
 
 if __name__ == "__main__":
