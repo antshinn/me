@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 """Set 3, Exercise 4."""
-
 import array
 import math
 
@@ -22,30 +21,21 @@ def binary_search(low, high, actual_number):
     Use the VS Code debugging tools a lot here. It'll make understanding
     things much easier.
     """
-    tries = 0
-    guess = 0
+
 
     # Write your code in here
-    high = input("Enter a high: ")
-    low = input("Enter a low: ")
-    print(f"OK then, a number between {low} and {high} ?")
-    high = int(high)
-    low = int(low)
-
-    low = 0
-    high = 0
-    if high >= low:
+    tries = 0
+    guess = 0
+    while high >= low:
         guess = (high + low)//2
-
         if array[guess] == actual_number:
             return guess
         elif array[guess] < actual_number:
             low = guess + 1
         else:
             high = guess - 1
-    
 
-
+    return {"guess": guess, "tries": tries}
 
 
 if __name__ == "__main__":
