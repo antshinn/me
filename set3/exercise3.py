@@ -39,18 +39,16 @@ def advancedGuessingGame():
                 continue
             break 
         except:
-            print(f"OK then, a number between {lowerBound} and {upperBound} ?")
-    
+            print ("that's not a valid number") 
+    print(f"OK then, a number between {lowerBound} and {upperBound} ?")
     upperBound = int(upperBound)
     lowerBound = int(lowerBound)
-
-
     actualNumber = random.randint(lowerBound, upperBound)
 
     guessed = False
 
     while not guessed:
-        guessedNumber = int(input("Enter a number between {} and {}". format(low, high)))
+        guessedNumber = int(input(f"Enter a number between {lowerbound} and {upperbound}"))
         print(f"You guessed {guessedNumber},")
         if guessedNumber == actualNumber:
             print(f"You got it!! It was {actualNumber}")
