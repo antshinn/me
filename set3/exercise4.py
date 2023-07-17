@@ -29,13 +29,14 @@ def binary_search(low, high, actual_number):
     while high >= low:
         guess = (high + low)//2
         if array[guess] == actual_number:
-            return guess
+            return {"guess": guess, "tries": tries}
         elif array[guess] < actual_number:
             low = guess + 1
         else:
-            high = guess - 1
+            high = guess - 1    
+    
+    actual_number = tries + 1
 
-    return {"guess": guess, "tries": tries}
 
 
 if __name__ == "__main__":
