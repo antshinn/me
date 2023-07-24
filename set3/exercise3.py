@@ -49,14 +49,17 @@ def advancedGuessingGame():
     print("A number between _ and _ ?")
     upperBound = super_asker("Enter an upper bound: ")
     lowerBound = input("Enter a lower bound: ")
+    print(f"OK then, a number between {lowerBound} and {upperBound} ?")
+    
+    actualNumber = random.randint(lowerBound, upperBound)
+    
     if lowerBound <= upperBound:
         print("upperbound is greater than lowerbound")
     continue
     break 
         except:
             print ("that's not a valid number") 
-    print(f"OK then, a number between {lowerBound} and {upperBound} ?")
-    actualNumber = random.randint(lowerBound, upperBound)
+    
 
     guessed = False
 
