@@ -221,14 +221,14 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    number_wedge = []
+    the_wedge = []
     
     for i in range (10):
         row = []
-        for j in range (i + 1):
+        for j in range (i+1):
             row.append(j)
-        number_wedge.append(row)
-    return number_wedge
+        the_wedge.append(row)
+    return the_wedge
  
 
 
