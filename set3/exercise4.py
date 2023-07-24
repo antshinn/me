@@ -1,6 +1,5 @@
 # -*- coding: UTF-8 -*-
 """Set 3, Exercise 4."""
-import array
 import math
 
 
@@ -26,16 +25,18 @@ def binary_search(low, high, actual_number):
     # Write your code in here
     tries = 0
     guess = 0
+    
     while high >= low:
         guess = (high + low)//2
-        if array[guess] == actual_number:
+        tries = tries + 1
+        if guess == actual_number:
             return {"guess": guess, "tries": tries}
-        elif array[guess] < actual_number:
+        elif guess < actual_number:
+            print (f"guess: {guess} (too small)")
             low = guess + 1
         else:
-            high = guess - 1    
-    
-    actual_number = tries + 1
+            print(f"Guess: {guess} (too big)")
+            high = guess - 1
 
 
 

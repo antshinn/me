@@ -80,12 +80,15 @@ def super_asker(low, high):
     """
     message = "Enter a number between {low} and {high} ".format(low=low, high=high) 
     while True:
-        number = int(input(message))
-        if low < number < high:
-            print("Correct {}".format(number))
-            return number
-        else:
-            print("Try again".format(input=number, low=low, high=high))
+        try:
+            number = int(input(message))
+            if low < number < high:
+                print("Correct {}".format(number))
+                return number
+            else:
+                print("Try again".format(input=number, low=low, high=high))
+        except Exception:
+            print("Try again")
 
 
 if __name__ == "__main__":
