@@ -5,6 +5,23 @@ Steps on the way to making your own guessing game.
 
 import random
 
+def super_asker(low, high):
+    """Robust asking function.
+
+    Combine what you learnt from stubborn_asker and not_number_rejector
+    to make a function that does it all!
+    """
+    message = "Enter a number between {low} and {high} ".format(low=low, high=high) 
+    while True:
+        try:
+            number = int(input(message))
+            if low < number < high:
+                print("Correct {}".format(number))
+                return number
+            else:
+                print("Try again".format(input=number, low=low, high=high))
+        except Exception:
+            print("Try again")
 
 def advancedGuessingGame():
     """Play a guessing game with a user.
@@ -30,19 +47,15 @@ def advancedGuessingGame():
     """
     print("\nWelcome to the guessing game!")
     print("A number between _ and _ ?")
-    while True:
-        try:
-            upperBound = input("Enter an upper bound: ")
-            lowerBound = input("Enter a lower bound: ")
-            if lowerBound <= upperBound:
-                print("upperbound is greater than lowerbound")
-                continue
-            break 
+    upperBound = super_asker("Enter an upper bound: ")
+    lowerBound = input("Enter a lower bound: ")
+    if lowerBound <= upperBound:
+        print("upperbound is greater than lowerbound")
+    continue
+    break 
         except:
             print ("that's not a valid number") 
     print(f"OK then, a number between {lowerBound} and {upperBound} ?")
-    upperBound = int(upperBound)
-    lowerBound = int(lowerBound)
     actualNumber = random.randint(lowerBound, upperBound)
 
     guessed = False
